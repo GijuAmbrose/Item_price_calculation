@@ -9,10 +9,10 @@ class PriceCalculator
   def initialize(items)
     @items = items
 
-    generate
+    process_calculation
   end
 
-  def generate
+  def process_calculation
     item_quantity = check_quantity(items)
 
     item_price = item_quantity.each_with_object({}) do |item, acc|
@@ -67,7 +67,7 @@ end
 
 puts 'Please enter all the items purchased separated by a comma:'
 items = gets.chomp.split(',').collect(&:strip)
-item_price = PriceCalculator.new(items).generate
+item_price = PriceCalculator.new(items).process_calculation
 puts "\n"
 puts 'Item          Quantity          Price'
 puts '-------------------------------------'

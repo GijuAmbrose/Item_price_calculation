@@ -8,7 +8,7 @@ describe "price_calculator" do
 
 
     it "should return total" do
-      items_price = PriceCalculator.new(["A", "B"]).generate
+      items_price = PriceCalculator.new(["A", "B"]).process_calculation
       expect(items_price.keys.to_s).to include("total")
       expect(items_price[:total].keys.to_s).to include('discounted_cost')
       expect(items_price[:total].keys.to_s).to include('actual_cost')
